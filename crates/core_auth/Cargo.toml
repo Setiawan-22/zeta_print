@@ -1,0 +1,14 @@
+[package]
+name = "core_auth"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+jsonwebtoken = { workspace = true }
+chrono = { workspace = true }
+core_db = { path = "../core_db" }

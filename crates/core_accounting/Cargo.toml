@@ -1,0 +1,11 @@
+[package]
+name = "core_accounting"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lopdf = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+core_db = { path = "../core_db" }
