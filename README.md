@@ -23,7 +23,18 @@ Before installing, testing, or contributing to ZetaPrint, ensure your system has
 - **Rust Toolchain**: `rustup`, `cargo`, and `rustc` (Edition 2021) installed.
 - **Node.js & npm**: Required by the `build.rs` script to automatically compile the SvelteKit frontend during the Rust build process.
 - **Linux Environment**: Recommended for deploying and testing the `systemd` service and `journalctl` logging natively.
-- **C Compiler**: A basic C compiler (like `gcc` or `clang`) may be required for compiling SQLite and other C dependencies natively.
+- **C Compiler & Libraries**: A basic C compiler, `pkg-config`, and OpenSSL development headers are required to compile native dependencies.
+
+**Ubuntu / Debian:**
+```bash
+sudo apt update
+sudo apt install pkg-config libssl-dev build-essential
+```
+
+**CentOS / RHEL / Fedora:**
+```bash
+sudo yum install pkgconfig openssl-devel gcc
+```
 
 ## 🚀 Installation & Setup
 ZetaPrint is designed to be installed easily on Linux machines via `systemd`.
