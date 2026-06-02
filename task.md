@@ -30,6 +30,8 @@
 ## Completed: Real-time DB & UI Integration
 - [x] Wire up `core_db` queries (Stats, Printers, Queue)
 - [x] Connect SvelteKit frontend to the new real API endpoints
+- [x] Build UI for `/dashboard/queue` to fix 404
+- [x] Build UI for `/dashboard/logs` to fix 404
 
 ## Completed: core_ipp
 - [x] Pengembangan `core_ipp` (Print Server)
