@@ -32,7 +32,7 @@ ZetaPrint is designed to be installed easily on Linux machines via `systemd`.
 You can install ZetaPrint directly from the GitHub repository using a single `cargo install` command.
 
 ```bash
-cargo install --git https://github.com/<username>/zetaprint
+cargo install --git https://github.com/Setiawan-22/zeta_print.git
 ```
 *(Make sure you have Rust installed on your system before running this command).*
 
