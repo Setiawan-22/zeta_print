@@ -13,6 +13,8 @@ build/
 .env
 .env.*
 !.env.example
+task.md
+zetaprint-ki.md
 
 # OS
 .DS_Store
