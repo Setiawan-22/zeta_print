@@ -156,10 +156,10 @@ struct UserProfile {
 async fn handle_login(Json(payload): Json<LoginRequest>) -> impl IntoResponse {
     info!("Login request received for user: {}", payload.username);
 
-    // Exact replica of BMS sysadmin/admin123 logic
-    if payload.username == "sysadmin" && payload.password == "admin123" {
+    // Exact replica of BMS admin/admin logic
+    if payload.username == "admin" && payload.password == "admin" {
         // Generate real JWT
-        let token = match core_auth::create_jwt("sysadmin-id", "sysadmin", "Super Admin") {
+        let token = match core_auth::create_jwt("admin-id", "admin", "System Administrator") {
             Ok(t) => t,
             Err(e) => {
                 tracing::error!("Failed to generate JWT: {}", e);
@@ -169,16 +169,16 @@ async fn handle_login(Json(payload): Json<LoginRequest>) -> impl IntoResponse {
 
         let response = LoginResponse {
             user: UserProfile {
-                id: "sysadmin-id".to_string(),
-                username: "sysadmin".to_string(),
+                id: "admin-id".to_string(),
+                username: "admin".to_string(),
                 full_name: "System Administrator".to_string(),
-                role_code: "sysadmin".to_string(),
-                role_name: "Super Admin".to_string(),
+                role_code: "admin".to_string(),
+                role_name: "System Administrator".to_string(),
             },
             permissions: vec!["*".to_string()], // Super Admin wildcard bypass
         };
         
-        let cookie_str = format!("auth_token={}; HttpOnly; Secure; Path=/; SameSite=Lax", token);
+        let cookie_str = format!("auth_token={}; HttpOnly; Path=/; SameSite=Lax", token);
         let mut headers = axum::http::HeaderMap::new();
         headers.insert(
             axum::http::header::SET_COOKIE,

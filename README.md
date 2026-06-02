@@ -21,7 +21,7 @@ ZetaPrint is a high-performance, modular monolith print management system built 
 ## 📋 Prerequisites
 Before installing, testing, or contributing to ZetaPrint, ensure your system has the following requirements:
 - **Rust Toolchain**: `rustup`, `cargo`, and `rustc` (Edition 2021) installed.
-- **Node.js & npm**: Required by the `build.rs` script to automatically compile the SvelteKit frontend during the Rust build process.
+- **Node.js & npm (v20.19+ or v22.12+)**: Required by the `build.rs` script to automatically compile the SvelteKit frontend during the Rust build process.
 - **Linux Environment**: Recommended for deploying and testing the `systemd` service and `journalctl` logging natively.
 - **C Compiler & Libraries**: A basic C compiler, `pkg-config`, and OpenSSL development headers are required to compile native dependencies.
 
@@ -52,7 +52,7 @@ ZetaPrint has a built-in command to automatically install itself as a systemd se
 
 ```bash
 # Run the built-in installer (requires root privileges)
-sudo ./target/release/zetaprint install
+sudo ~/.cargo/bin/zetaprint install
 ```
 
 This command will:
@@ -74,5 +74,5 @@ Access the Web UI by navigating to the server's IP address (Port `8080` by defau
 `http://<SERVER_IP>:8080/`
 
 **Default Credentials**:
-- **Username**: `sysadmin`
-- **Password**: `admin123`
+- **Username**: `admin`
+- **Password**: `admin`
